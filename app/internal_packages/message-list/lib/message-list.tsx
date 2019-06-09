@@ -27,7 +27,6 @@ import FindInThread from './find-in-thread';
 import MessageItemContainer from './message-item-container';
 import { MessageListScrollTooltip } from './message-list-scroll-tooltip';
 import { SubjectLineIcons } from './subject-line-icons';
-import { Disposable } from 'event-kit';
 
 interface MessageListState {
   messages: Message[];
@@ -417,7 +416,7 @@ class MessageList extends React.Component<{}, MessageListState> {
           id="message-list"
           className={classNames({
             'message-list': true,
-            'message-restrict-width': this.state.restrictMaxWidth,
+            'restrict-width': AppEnv.config.get(PREF_RESTRICT_WIDTH),
             'height-fix': SearchableComponentStore.searchTerm !== null,
           })}
         >
