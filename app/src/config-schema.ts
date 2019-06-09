@@ -124,6 +124,11 @@ export default {
             default: false,
             title: localized('Display conversations in descending chronological order'),
           },
+          restrictMaxWidth: {
+            type: 'boolean',
+            default: true,
+            title: localized('Restrict width of messages to maximize readability.'),
+          },
         },
       },
       composing: {
